@@ -16,5 +16,10 @@
 // setInterval(() => {
 //   console.log(ab + 1);
 // }, 1000);
-const name = require("./names.js");
-console.log(name);
+// const name = require("./names.js");
+// console.log(name);
+const os = require("os");
+const user = os.userInfo();
+console.log(user);
+
+console.log(os.uptime() / 60);
