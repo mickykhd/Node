@@ -18,8 +18,20 @@
 // }, 1000);
 // const name = require("./names.js");
 // console.log(name);
-const os = require("os");
-const user = os.userInfo();
-console.log(user);
+// const os = require("os");
+// const user = os.userInfo();
+// console.log(user);
 
-console.log(os.uptime() / 60);
+// console.log(os.uptime() / 60);
+
+// const { readFileSync, writeFileSync } = require("fs");
+
+// const first = readFileSync("./content/first.txt", "utf-8");
+// const second = readFileSync("./content/second.txt", "utf8");
+
+// console.log(first, second);
+
+// writeFileSync("./content/result-sync-txt", `Here is the result : ${first}`, {
+//   flag: "a",
+// });
+const { readFile, writeFile } = require("fs");
