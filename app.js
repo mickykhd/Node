@@ -22,16 +22,47 @@
 // const user = os.userInfo();
 // console.log(user);
 
-// console.log(os.uptime() / 60);
+// console.log(os.uptime());
 
-// const { readFileSync, writeFileSync } = require("fs");
+// const path = require("path");
+// const fs = require("fs");
+// const os = require("os");
+// const user = os.userInfo();
+// console.log(user);
 
-// const first = readFileSync("./content/first.txt", "utf-8");
-// const second = readFileSync("./content/second.txt", "utf8");
+// const { readFile, writeFile } = require("fs");
 
-// console.log(first, second);
+// readFile("./content/first.txt", "utf-8", (err, result) => {
+//   if (err) {
+//     return;
+//   }
+//   const first = result;
 
-// writeFileSync("./content/result-sync-txt", `Here is the result : ${first}`, {
-//   flag: "a",
+//   readFile("./content/second.txt", "utf-8", (err, result) => {
+//     if (err) {
+//       return;
+//     }
+//     const second = result;
+//     writeFile("./content/resultAsync.txt", "hekllp", (err, result) => {
+//       if (err) {
+//         return;
+//       }
+//       console.log(result);
+//     });
+//   });
 // });
-const { readFile, writeFile } = require("fs");
+const http = require("http");
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.end("hey there");
+  } else if (req.url === "/about") {
+    res.end("here is our about");
+  } else {
+    res.end(`
+      <h1>Wrong path</h1>
+      
+      `);
+  }
+});
+
+server.listen(5000);
