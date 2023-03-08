@@ -89,3 +89,30 @@
 // server.listen(5000, () => {
 //   console.log("server is running on port 5000");
 // });
+
+// const EventEmitter = require("events");
+
+// const customEmitter = new EventEmitter();
+
+// customEmitter.on("response", (name, age) => {
+//   console.log(`data ${name} ${age}`);
+// });
+// customEmitter.on("response", () => {
+//   console.log("other stuff");
+// });
+
+// customEmitter.emit("response", "micky", 29);
+
+const http = require("http");
+
+// const server = http.createServer((req, res) => {
+//   res.end("welcome");
+// });
+
+const server = http.createServer();
+
+server.on("request", (req, res) => {
+  res.end("welcome");
+});
+
+server.listen(5000);
