@@ -51,18 +51,41 @@
 //     });
 //   });
 // });
-const http = require("http");
-const server = http.createServer((req, res) => {
-  if (req.url === "/") {
-    res.end("hey there");
-  } else if (req.url === "/about") {
-    res.end("here is our about");
-  } else {
-    res.end(`
-      <h1>Wrong path</h1>
-      
-      `);
-  }
-});
+// const http = require("http");
+// const server = http.createServer((req, res) => {
+//   if (req.url === "/") {
+//     res.end("hey there");
+//   } else if (req.url === "/about") {
+//     res.end("here is our about");
+//   } else {
+//     res.end(`
+//       <h1>Wrong path</h1>
 
-server.listen(5000);
+//       `);
+//   }
+// });
+// console.log(http);
+
+// server.listen(5000);
+// console.log(`server is running on port 5000`);
+// console.log("hi");
+
+// const http = require("http");
+
+// const server = http.createServer((req, res) => {
+//   console.log(req.url);
+//   if (req.url === "/") {
+//     res.end("hey there");
+//   } else if (req.url === "/about") {
+//     res.end("here is our about");
+//   } else {
+//     res.end(`
+//       <h1>Wrong path</h1>
+
+//       `);
+//   }
+// });
+
+// server.listen(5000, () => {
+//   console.log("server is running on port 5000");
+// });
